@@ -1,4 +1,4 @@
-
+import './aboutus.css';
 import './landingpage.css';
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,13 +13,16 @@ import pic3 from '../assets/grden2.jfif';
 import pic4 from '../assets/grden3.jfif';
 import pic5 from '../assets/grden4.jfif';
 import pic6 from '../assets/grden5.jpg';
-import pic7 from '../assets/room1.jpg'
-function Landingpage(){
+
+function Aboutus(){
     return(
         <div className='main'>
             <div className='logo'>
             </div>
-            <div className='scroll'>
+            <div className='aboutkalahari'>
+                <h2>About Kalahari water front hotel</h2>
+            </div>
+            <div className='scroller'>
                 <>
             <Swiper
         spaceBetween={30}
@@ -61,75 +64,21 @@ function Landingpage(){
                     <h4>Login</h4>
                 </div>
             </div>
-            <div className='rooms'>
-            <div className='luxury'>
-                <h3>WE REIMAGINED LUXURY</h3>
-            </div>
-            <div className='booking'>
-                <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
-                    <div className='text'>
-                        <h4>
-                            The Luxury rooms at The<br></br> Cullinan on Kalahari
-                        </h4>
-                        <h4 className='price'>R4500.00</h4>
-                        <span></span>
-                        <button>
-                            explore
-                        </button>
-                    </div>
-                </div>
-                <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
-                    <div className='text'>
-                        <h4>
-                            The Luxury rooms at The<br></br> Cullinan on Kalahari
-                        </h4>
-                        <h4 className='price'>R4500.00</h4>
-                        <span></span>
-                        <button>
-                            explore
-                        </button>
-                    </div>
-                </div>
-                <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
-                    <div className='text'>
-                        <h4>
-                            The Luxury rooms at The<br></br> Cullinan on Kalahari
-                        </h4>
-                        <h4 className='price'>R4500.00</h4>
-                        <span></span>
-                        <button>
-                            explore
-                        </button>
-                    </div>
-                </div>
-                <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
-                    <div className='text'>
-                        <h4>
-                            The Luxury rooms at The<br></br> Cullinan on Kalahari
-                        </h4>
-                        <h4 className='price'>R4500.00</h4>
-                        <span></span>
-                        <button>
-                            explore
-                        </button>
-                  
-                    </div>    
-                </div>
-            </div>
-            </div>
-            <div className='specials'>
-                <div className='hotel-special'>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</p>
-                </div>
-                <div className='hotel-competition'>
-                <p>4 february we are having a couple competition, you can join the competion by just email us your booking reciet which you downloaded fro your profile </p>
-                </div>
+           
+            <div className='paragraph'>
+            <h1>HOTEL & RESTAURANT  - KALAHARI WATERFRONT</h1>
+          Once you’ve experience our services you will always be compelled to return and we will
+           always be willing to serve you. Our courteous staff is here to ensure that your stay 
+           with us is memorable and exciting. Remember just pay one affordable cover charge and 
+           enjoy exclusive access to all of our facilities.
+            Located on the Nandoni Budeli area, just 10 minutes away from the Thohoyandou Thavhani Mall, the Kalahari Waterfront Hotel and Resort with Fun Park provides a relaxing and tranquil atmosphere for family getaways as well as corporate retreats and group excursions. Nestled on 12 acres of prime real-estate, the Resort offers an entry cover charge which provides patrons full access to a wide array of fun activities which would leave a lasting impression and a craving for a return for more fun and frolic in the sun. We are opened to the public from 0900hrs to 1800hrs daily, inclusive of Sundays and holidays.
+            Kalahari WaterFront offers a conference facility in the most
+             amazing sitting of peace and tranquility making this the newest and most 
+             sought-after functions venue in the region. We cater for Weddings, special  
+             initiatives for groups and corporate meetings.We will consult and assist in the
+              planning of your wedding or function and package to meet your required need.Whether 
+              you visit Kalahari for business or pleasure it is always perfectly suited to cater to every need.
+               We can cater for any Wedding, functions, events or themed party.
             </div>
             <div className='footer'>
                 <div className='media'>
@@ -173,4 +122,4 @@ function Landingpage(){
         </div>
     )
 }
-export default Landingpage;
+export default Aboutus;

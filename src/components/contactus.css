@@ -1,0 +1,49 @@
+.logo-contact{
+    position: relative;
+    width:150px;
+    height: 100px;
+    background: url(../assets/logo.jpg);
+    background-size:150px 100px ;
+    background-repeat: no-repeat;
+}
+.contactus{
+    background-color: #313B5E;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    word-spacing: 15px;
+    font-size: 50px;
+    text-justify:distribute;
+    padding-top: 5px;
+    margin-top: 25px;
+}
+.contact-form{
+    background-color: orange;
+    width: 50%;
+    text-align: left;
+}
+.contact-details{
+    background-color: yellow;
+    width: 50%;
+}
+input{
+    height: 50px;
+    width: 100%;
+    background-color:#d9d9d9;
+    border: none;
+    border-radius: 10px;
+}
+.contactus h2{
+ font-weight: 400;
+}
+.main-contact{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.submit-contact{
+    background-color:#62FF02;
+    border-radius: 10px;
+}

@@ -1,0 +1,182 @@
+.main{
+    position: relative;
+    background-color: blue;
+}
+.scroll{
+    position: relative;
+    margin-top: -6%;
+    z-index: 1;
+}
+.logo{
+    position: relative;
+    z-index: 2;
+    width:150px;
+    height: 100px;
+    background: url(../assets/logo.jpg);
+    background-size:150px 100px ;
+    background-repeat: no-repeat;
+}
+.topnav{
+    position: absolute;
+    left: 54rem;
+    top: 0.5rem;
+    z-index: 2;
+    justify-content: space-between;
+    width: 1000px;
+    display: flex;
+    padding-top: 15px;
+    background-color: green;
+}
+.home{
+    background-color: #d9d9d9;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+   padding-bottom: 10px;
+}
+.about{
+    background-color: #d9d9d9;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+   padding-bottom: 10px;
+}
+.contact{
+    background-color: #d9d9d9;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.profile{
+    background-color: #d9d9d9;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+   padding-bottom: 10px;
+}
+.login{
+    background-color: #d9d9d9;
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.topnav h4{
+    padding-bottom: 12px;
+}
+.luxury{
+background-color: #313B5E;
+color: white;
+height: 80px;
+align-items: center;
+justify-content: center;
+padding-top: 15px;
+}
+.booking{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.roominfo h4{ 
+    color: #BF8035;;
+}
+button{
+    background-color: #BF8035;
+    height: 50px;
+    width: 100px;
+    border: none;
+}
+.specials{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.hotel-special{
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 25%;
+    margin-left: 20%;
+    color: #BF8035;
+}
+.hotel-competition{
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 25%;
+    margin-right: 20%;
+    color: #BF8035;
+}
+.hotel-competition p{
+    font-weight: 900;
+    text-align: left;
+}
+.footer{
+    display: flex;
+    background-color: #313B5E;
+    justify-content: space-between;
+}
+.media{
+    align-items: center;
+    justify-content: center;
+    width: 20%; 
+}
+.footer-about{
+    width: 20%;
+    
+}
+.footer-contact{
+    width: 20%;
+   
+}
+.footer-about p{
+    text-align: left;
+    color: white;
+    margin-top: 30px;
+}
+.footer-contact p{
+    text-align: left;
+    color: white;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.footer-logo{
+    position: relative;
+    width:300px;
+    height: 130px;
+    background: url(../assets/logo.jpg);
+    background-size:300px 130px ;
+    background-repeat: no-repeat;
+    margin-left: 8%;
+    
+}
+.footer-media{
+    margin-top: 50px;
+}
+.footer-media .facebook{
+   font-size: 55px;
+   color: grey;
+   margin-right: 10px;
+}
+.footer-media .twiter{
+    font-size: 55px;
+    color: grey;
+    margin-right: 10px;
+ }
+ .footer-media .instagram{
+    font-size: 55px;
+    color: grey;
+    margin-right: 10px;
+ }
+ .footer-media .linkedin{
+    font-size: 55px;
+    color: grey;
+ }
+
+ 

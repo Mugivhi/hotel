@@ -1,0 +1,19 @@
+.aboutkalahari{
+    background-color: #313B5E;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    word-spacing: 15px;
+    font-size: 50px;
+    text-justify:distribute;
+    padding-top: 5px;
+    margin-top: 25px;
+}
+.aboutkalahari h2{
+ font-weight: 400;
+}
+.paragraph{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
