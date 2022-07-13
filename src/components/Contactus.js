@@ -36,27 +36,27 @@ function Contactus(){
                     <form>
                         <div>
                             <label>name</label><br></br>
-                            <input></input>
+                            <input type='text'></input>
                         </div>
                         <div>
-                            <label>name</label><br></br>
-                            <input></input>
+                            <label>phone</label><br></br>
+                            <input type='text'></input>
                         </div>
                         <div>
-                            <label>name</label><br></br>
-                            <input></input>
+                            <label>email addres</label><br></br>
+                            <input type='text'></input>
                         </div>
                         <div>
-                            <label>name</label><br></br>
-                            <input></input>
+                            <label>number of guests</label><br></br>
+                            <input type='text'></input>
                         </div>
                         <div>
-                            <label>name</label><br></br>
-                            <input></input>
+                            <label>arrival date</label><br></br>
+                            <input type='text'></input>
                         </div>
                         <div>
-                            <label>name</label><br></br>
-                            <input></input>
+                            <label>description</label><br></br>
+                            <textarea></textarea>
                         </div>
                         <div>
                             <button className='submit-contact'>

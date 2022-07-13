@@ -1,0 +1,65 @@
+.holder-profile{
+    display: flex;
+    justify-content: space-between;
+}
+.personal-details{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+}
+.personal-bookings{
+    width: 50%;
+    height:65.5rem;
+    overflow: auto;
+}
+.user-image img{
+    border-radius: 50%;
+    margin-top: 50px;
+    height: 600px;
+    width: 600px;
+}
+.user-info h3{
+    margin-top: 50px;
+}
+.bookings-text{
+    background-color: #313B5E;
+    height: 70px;
+    padding-top: 13px;
+    color: white;
+}
+.booking-view{
+    margin-top: 15px;
+    display: flex;
+}
+.roominfo{
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    font-size: 33px;
+}
+.dates{
+    background-color: #808080;
+    color:#d9d9d9;
+    font-weight: 700;
+    margin-left: 20px;
+    width: 90%;
+    
+}
+.buttons .download{
+    color: white;
+    font-weight: 900;
+    height: 50px;
+    background-color:#62FF02;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 45%;
+}
+.buttons .cancel{
+    color: white;
+    background-color: #FF0000;
+    font-weight: 900;
+    border-radius: 10px;
+    width: 45%;
+}

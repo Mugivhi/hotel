@@ -1,10 +1,16 @@
 .logo-contact{
     position: relative;
     width:150px;
-    height: 100px;
+    height: 70px;
+    left: 400px;
     background: url(../assets/logo.jpg);
-    background-size:150px 100px ;
+    background-size:150px 70px ;
     background-repeat: no-repeat;
+}
+label{
+    font-weight: 900;
+    margin-top: 150px;
+    margin: 80px;
 }
 .contactus{
     background-color: #313B5E;
@@ -16,20 +22,24 @@
     font-size: 50px;
     text-justify:distribute;
     padding-top: 5px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 .contact-form{
-    background-color: orange;
     width: 50%;
     text-align: left;
+    align-items: center;
+    justify-content: center;
 }
 .contact-details{
-    background-color: yellow;
+    align-items: center;
+    justify-content: center;
     width: 50%;
 }
 input{
     height: 50px;
-    width: 100%;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 80px;
     background-color:#d9d9d9;
     border: none;
     border-radius: 10px;
@@ -45,5 +55,39 @@ input{
 }
 .submit-contact{
     background-color:#62FF02;
+    margin-left: 80px;
+    margin-top: 10px;
     border-radius: 10px;
+}
+.email-kalahari{
+    border: 2px solid #969696;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.phone-kalahari{
+    border: 2px solid #969696;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.address-kalahari{
+    border: 2px solid #969696;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  
+}
+form{
+    align-items: center;
+    justify-content: center;
+}
+textarea{
+    height: 100px;
+    width: 80%;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 10px;
+    margin-left: 80px;
 }
