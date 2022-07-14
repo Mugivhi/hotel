@@ -1,6 +1,8 @@
 import './aboutus.css';
 import './landingpage.css';
 import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import FacebookIcon from '@mui/icons-material/Facebook';

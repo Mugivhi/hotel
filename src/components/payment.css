@@ -1,0 +1,34 @@
+.main-payment{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.form-payment input{
+    width: 50%;
+    height: 80px;
+    background-color: #d9d9d9;
+    border: none;
+    margin-top: 2%;
+}
+
+.two-imp{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 25%;
+    width: 50%;
+}
+.two-imp input{
+   width: 45%;
+}
+.pay-button button{
+    width: 50%;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    margin-top: 1%;
+}
+.main-payment ::placeholder{
+    font-size: 30px;
+    text-align: center;
+}

@@ -33,7 +33,8 @@ function Contactus(){
             </div>
             <div className='main-contact'>
                 <div className='contact-form'>
-                    <form>
+                    <form className='cont-form'  action="https://formspree.io/f/xoqrdlkz"
+                                method="post">
                         <div>
                             <label>name</label><br></br>
                             <input type='text'></input>

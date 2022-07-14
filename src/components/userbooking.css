@@ -1,0 +1,16 @@
+.adminadd{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.boking-user input{
+    width: 50%;
+    height: 50px;
+    background-color: #d9d9d9;
+    border: none;
+    margin-bottom: 1%;
+}
+.proceed-btn button{
+    color: white;
+    width: 10%;
+}

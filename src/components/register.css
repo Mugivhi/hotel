@@ -1,0 +1,40 @@
+.main-page-register{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.loginpage-register{
+    background: url(../assets/front2.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-left: 25%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+.form-input input{
+    width: 70%;
+    margin-bottom: 2%;
+    margin-left: -2%;
+    height: 50px;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 80px;
+    background-color:white;
+    border: none;
+    border-radius: 10px;
+}
+.form-input ::placeholder{
+    font-size: 30px;
+}
+.buttons-login-register button{
+    display: grid;
+    padding-top: 1%;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    background-color: blue;
+    border-radius: 10px;
+}

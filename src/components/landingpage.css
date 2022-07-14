@@ -6,7 +6,24 @@
     position: relative;
     margin-top: -6%;
     z-index: 1;
-}
+} 
+.top-login-btn button{
+    background-color: transparent;
+}  
+.top-login-btn{
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    background-color:#d9d9d9;
+  }
+  
+.top-login-btn:hover{
+    background-color: #d9d9d9;
+    color:grey;
+  }
 .logo{
     position: relative;
     z-index: 2;
@@ -57,14 +74,6 @@
     border-radius: 10px;
     text-align: center;
    padding-bottom: 10px;
-}
-.login{
-    background-color: #d9d9d9;
-    width: 120px;
-    height: 50px;
-    border-radius: 10px;
-    text-align: center;
-    padding-bottom: 10px;
 }
 .topnav h4{
     padding-bottom: 12px;

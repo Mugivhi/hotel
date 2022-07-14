@@ -1,6 +1,9 @@
-
+import React,{useState} from 'react';
+import {Link} from 'react-router-dom'
 import './landingpage.css';
 import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -46,19 +49,29 @@ function Landingpage(){
             </div>
             <div className='topnav'>
                 <div className='home'>
-                    <h4>Home</h4>
+                    <button>
+                        <Link to='./'  className='nav-links'><h3>home</h3></Link>
+                    </button>
                 </div>
                 <div className='about'>
-                    <h4>About</h4>
+                    <button>
+                        <Link to='./Aboutus'  className='nav-links'><h3>About</h3></Link>
+                    </button>
                 </div>
                 <div className='profile'>
-                    <h4>profile</h4>
+                    <button>
+                        <Link to='./Profilepage'  className='nav-links'><h3>Profile</h3></Link>
+                    </button>
                 </div>
                 <div className='contact'>
-                    <h4>contact</h4>
+                   <button>
+                        <Link to='./Contactus'  className='nav-links'><h3>Contactus</h3></Link>
+                    </button>
                 </div>
-                <div className='login'>
-                    <h4>Login</h4>
+                <div className='top-login-btn'>
+                   <button>
+                        <Link to='./Loginpage'  className='nav-links'><h3>Login</h3></Link>
+                    </button>
                 </div>
             </div>
             <div className='rooms'>

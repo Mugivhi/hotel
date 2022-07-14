@@ -11,9 +11,10 @@ function Loginpage(){
                     <h2>Login as Admin</h2>
                 </div>
                 </div>
+                <div className='form-login'>
                 <form>
                     <div>
-                        <input placeholder='email'></input>
+                        <input placeholder='entert your username or email'></input>
                     </div>
                     <div>
                         <input placeholder='password'></input>
@@ -23,6 +24,7 @@ function Loginpage(){
                         <button>Sign-up</button>
                     </div>
                 </form>
+                </div>
             </div>
         </div>
     )
