@@ -47,23 +47,6 @@ function Landingpage(){
       </Swiper>
       </>
             </div>
-            {/* <div className='topnav'>
-                <div className='home'>
-                    <Link to='/'  className='nav-links'><h3>home</h3></Link>
-                </div>
-                <div className='about'>
-                    <Link to='/Aboutus'  className='nav-links'><h3>About</h3></Link>
-                </div>
-                <div className='profile'>
-                    <Link to='/Profilepage'  className='nav-links'><h3>Profile</h3></Link>
-                </div>
-                <div className='contact'>
-                    <Link to='/Contactus'  className='nav-links'><h3>Contactus</h3></Link>
-                </div>
-                <div className='top-login-btn'>
-                    <Link to='/Loginpage'  className='nav-links'><h3>Login</h3></Link>
-                </div>
-            </div> */}
             <div className='rooms'>
             <div className='luxury'>
                 <h3>WE REIMAGINED LUXURY</h3>

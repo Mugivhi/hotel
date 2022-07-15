@@ -1,12 +1,12 @@
 import './login.css';
 import {Link} from 'react-router-dom';
-function Loginpage(){
+function Adminlogin(){
     return(
         <div className='main-page'>
             <div className='loginpage'>
                 <div className='header'>
                 <div className='header-login'>
-                   <a href='./Adminlogin' ><h2>Login</h2></a>
+                    <h2>Login</h2>
                 </div>
                 <div className='header-admin'>
                     <h2>Login as Admin</h2>
@@ -30,4 +30,4 @@ function Loginpage(){
         </div>
     )
 }
-export default Loginpage;
+export default Adminlogin;
