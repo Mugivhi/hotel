@@ -1,4 +1,5 @@
 import './login.css';
+import {Link} from 'react-router-dom';
 function Loginpage(){
     return(
         <div className='main-page'>
@@ -21,7 +22,7 @@ function Loginpage(){
                     </div>
                     <div className='buttons-login'>
                         <button>Login</button>
-                        <button>Sign-up</button>
+                       <button>Sign-up</button>
                     </div>
                 </form>
                 </div>

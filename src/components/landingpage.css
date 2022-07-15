@@ -29,7 +29,6 @@
     z-index: 2;
     width:150px;
     height: 100px;
-    background: url(../assets/logo.jpg);
     background-size:150px 100px ;
     background-repeat: no-repeat;
 }

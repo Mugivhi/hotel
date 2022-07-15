@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import './landingpage.css';
 import "swiper/css";
 import 'swiper/css/pagination';
@@ -47,33 +47,23 @@ function Landingpage(){
       </Swiper>
       </>
             </div>
-            <div className='topnav'>
+            {/* <div className='topnav'>
                 <div className='home'>
-                    <button>
-                        <Link to='./'  className='nav-links'><h3>home</h3></Link>
-                    </button>
+                    <Link to='/'  className='nav-links'><h3>home</h3></Link>
                 </div>
                 <div className='about'>
-                    <button>
-                        <Link to='./Aboutus'  className='nav-links'><h3>About</h3></Link>
-                    </button>
+                    <Link to='/Aboutus'  className='nav-links'><h3>About</h3></Link>
                 </div>
                 <div className='profile'>
-                    <button>
-                        <Link to='./Profilepage'  className='nav-links'><h3>Profile</h3></Link>
-                    </button>
+                    <Link to='/Profilepage'  className='nav-links'><h3>Profile</h3></Link>
                 </div>
                 <div className='contact'>
-                   <button>
-                        <Link to='./Contactus'  className='nav-links'><h3>Contactus</h3></Link>
-                    </button>
+                    <Link to='/Contactus'  className='nav-links'><h3>Contactus</h3></Link>
                 </div>
                 <div className='top-login-btn'>
-                   <button>
-                        <Link to='./Loginpage'  className='nav-links'><h3>Login</h3></Link>
-                    </button>
+                    <Link to='/Loginpage'  className='nav-links'><h3>Login</h3></Link>
                 </div>
-            </div>
+            </div> */}
             <div className='rooms'>
             <div className='luxury'>
                 <h3>WE REIMAGINED LUXURY</h3>
