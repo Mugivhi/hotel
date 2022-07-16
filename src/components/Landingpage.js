@@ -10,6 +10,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import Review from './Review';
 import pic1 from '../assets/front.jpg';
 import pic2 from '../assets/grden1.jpg';
 import pic3 from '../assets/grden2.jfif';
@@ -18,6 +19,7 @@ import pic5 from '../assets/grden4.jfif';
 import pic6 from '../assets/grden5.jpg';
 import pic7 from '../assets/room1.jpg'
 function Landingpage(){
+    const [buttonPopup, setButtonPopup]=useState(false);
     return(
         <div className='main'>
             <div className='logo'>
@@ -60,9 +62,11 @@ function Landingpage(){
                         </h4>
                         <h4 className='price'>R4500.00</h4>
                         <span></span>
-                        <button>
+                        <button onClick={()=>setButtonPopup(true)}>
                             explore
                         </button>
+                        <Review trigger={buttonPopup} setTrigger={setButtonPopup}>
+                        </Review>
                     </div>
                 </div>
                 <div className='roominfo'>
@@ -73,9 +77,11 @@ function Landingpage(){
                         </h4>
                         <h4 className='price'>R4500.00</h4>
                         <span></span>
-                        <button>
+                        <button onClick={()=>setButtonPopup(true)}>
                             explore
                         </button>
+                        <Review trigger={buttonPopup}>
+                        </Review>
                     </div>
                 </div>
                 <div className='roominfo'>
@@ -86,9 +92,11 @@ function Landingpage(){
                         </h4>
                         <h4 className='price'>R4500.00</h4>
                         <span></span>
-                        <button>
+                        <button onClick={()=>setButtonPopup(true)}>
                             explore
                         </button>
+                        <Review trigger={buttonPopup}>
+                        </Review>
                     </div>
                 </div>
                 <div className='roominfo'>
@@ -99,10 +107,11 @@ function Landingpage(){
                         </h4>
                         <h4 className='price'>R4500.00</h4>
                         <span></span>
-                        <button>
+                        <button onClick={()=>setButtonPopup(true)}>
                             explore
                         </button>
-                  
+                        <Review trigger={buttonPopup}>
+                        </Review>
                     </div>    
                 </div>
             </div>

@@ -22,7 +22,9 @@ function Loginpage(){
                     </div>
                     <div className='buttons-login'>
                         <button>Login</button>
-                       <button>Sign-up</button>
+                        <Link to='Register'>
+                            <button className='btn'>Sign-up</button>
+                         </Link>
                     </div>
                 </form>
                 </div>

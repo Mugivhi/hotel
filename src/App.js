@@ -6,8 +6,8 @@ import Aboutus from './components/Aboutus';
 import Contactus from './components/Contactus';
 import Profilepage from './components/Profilepage';
 import Navbar from './components/Navbar';
-import Review from './components/Review';
 import Loginpage from './components/Loginpage';
+// import Authentication from './components/Authentication';
 import Register from './components/Register';
 import Payment from './components/Payment';
 import Userbooking from './components/Userbooking';
@@ -28,6 +28,9 @@ function App() {
         <Routes>
         <Route path="/Loginpage"  element={<Loginpage/>}/>
         </Routes>
+        {/* <Routes>
+        <Route path="/Authentication"  element={<Authentication/>}/>
+        </Routes> */}
     </BrowserRouter>
   );
 }
