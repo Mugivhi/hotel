@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import './landingpage.css';
-import {Link} from 'react-router-dom';
 import './review.css';
 import pic7 from '../assets/room1.jpg';
 import Payment from './Payment';

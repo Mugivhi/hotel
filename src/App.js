@@ -26,6 +26,9 @@ function App() {
         <Route path="/profilepage"  element={<Profilepage/>}/></Routes>
         <Routes>
           <Route path='Payment' element={<Payment/>}/></Routes>
+          <Routes>
+            <Route path='Userbooking' element={<Userbooking/>}/>
+          </Routes>
     </BrowserRouter>
   );
 }
