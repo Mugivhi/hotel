@@ -1,7 +1,9 @@
+import React,{useState} from 'react';
 import './payment.css';
-
-function Payment(){
-    return(
+import Paymentpopup from './Paymentpopup';
+function Payment(props){
+    const [buttonPopup, setButtonPopup]=useState(false);
+    return(props.trigger) ? (
         <div className='main-payment'>
             <div className='form-payment'>
                 <form>
@@ -23,12 +25,14 @@ function Payment(){
                         <input placeholder='country or region'/>
                     </div>
                     <div className='pay-button'>
-                        <button>pay</button>
+                        <button  onClick={()=>setButtonPopup(true)}>pay</button>
+                        <Paymentpopup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                        </Paymentpopup>
                     </div>
                     </div>
                 </form>
             </div>
         </div>
-    )
+    ):"";
 }
 export default Payment;

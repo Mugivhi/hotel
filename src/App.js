@@ -6,15 +6,14 @@ import Aboutus from './components/Aboutus';
 import Contactus from './components/Contactus';
 import Profilepage from './components/Profilepage';
 import Navbar from './components/Navbar';
-import Loginpage from './components/Loginpage';
-// import Authentication from './components/Authentication';
-import Register from './components/Register';
 import Payment from './components/Payment';
 import Userbooking from './components/Userbooking';
 import Adminadd from './components/Adminadd';
 import Admusers from './components/Admusers';
+
 function App() {
   return (
+    
     <BrowserRouter>
          <Navbar/>
         <Routes>
@@ -26,11 +25,7 @@ function App() {
         <Routes>
         <Route path="/profilepage"  element={<Profilepage/>}/></Routes>
         <Routes>
-        <Route path="/Loginpage"  element={<Loginpage/>}/>
-        </Routes>
-        {/* <Routes>
-        <Route path="/Authentication"  element={<Authentication/>}/>
-        </Routes> */}
+          <Route path='Payment' element={<Payment/>}/></Routes>
     </BrowserRouter>
   );
 }

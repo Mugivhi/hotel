@@ -10,6 +10,9 @@
     justify-content: center;
     align-items: center;
 }
+.login-register-container{
+    width: 80%;
+}
 
 .header{
     color: white;

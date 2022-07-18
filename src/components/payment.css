@@ -1,22 +1,34 @@
 .main-payment{
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 80;
+    background-color: whitesmoke;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 .form-payment input{
-    width: 50%;
+    width: 100%;
     height: 80px;
     background-color: #d9d9d9;
     border: none;
     margin-top: 2%;
+}
+.form-payment{
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border: 1px solid #BFBFBF;
+    width: 30%;
 }
 
 .two-imp{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin-left: 25%;
-    width: 50%;
+    width: 100%;
 }
 .two-imp input{
    width: 45%;

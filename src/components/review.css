@@ -12,8 +12,10 @@
 }
 .popup-inner{
     position: relative;
+    margin-top: 15px;
     padding: 32px;
-    width: 100%;
+    width: 80%;
+    height: 80%;
     max-width:640px;
     background-color: white;
 }
@@ -26,12 +28,12 @@
 
 .more-info{
     display: flex;
-    width: 30%;
-    margin-left: 35%;
+    width: 100%;
+    height: 50%;
 }
 .room-services{
     width: 100%;
-    height: 100%;
+    height: 80%;
     align-items: center;
     justify-content: center;
     text-align: left;
@@ -39,7 +41,7 @@
 }
 .review-comp{
     width: 100%;
-    height: 100%;
+    height: 80%;
     color: #BF8035;
     font-weight: 700;
 }

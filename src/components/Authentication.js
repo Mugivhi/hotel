@@ -4,8 +4,10 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword
 } from "firebase/auth";
-import {auth} from '../firebase'
+import {auth} from '../firebase';
 import { useNavigate } from "react-router-dom";
+import './login.css';
+import './register.css'
 // import TodoSVG from '../assets/todo-svg.svg'
 
 export default function Authentication(props) {
@@ -81,27 +83,26 @@ export default function Authentication(props) {
                <div className='form-register'>
                 <form>
                     <div className='form-input'>
-                        <div>
+                        {/* <div>
                         <input type='text' placeholder='enter your name' value={registerInformation.name} onChange={(e) =>setRegisterInformation({...registerInformation,name: e.target.value})}/>
-                        
-                        </div>
-                        <div>
+                        </div> */}
+                        {/* <div>
                         <input type='text' placeholder='enter your surname' value={registerInformation.surname} onChange={(e) =>setRegisterInformation({...registerInformation,surname: e.target.value})}/>
+                        </div> */}
+                        <div>
+                        <input type='email' placeholder='email' value={registerInformation.email}   onChange={(e) =>setRegisterInformation({...registerInformation,email: e.target.value})}/>
                         </div>
                         <div>
-                        <input type='text' placeholder='enter  your id' value={registerInformation.id} onChange={(e) =>setRegisterInformation({...registerInformation,id: e.target.value})}/>
+                        <input type='email' placeholder='confirm email'value={registerInformation.confirmEmail} onChange={(e) =>setRegisterInformation({...registerInformation,confirmEmail: e.target.value})}/>
                         </div>
-                        <div>
-                        <input type='email' placeholder='enter your email 'value={registerInformation.email} onChange={(e) =>setRegisterInformation({...registerInformation,email: e.target.value})}/>
-                        </div>
-                        <div>
+                        {/* <div>
                         <input type='file' placeholder='Add your image'value={registerInformation.image} onChange={(e) =>setRegisterInformation({...registerInformation,image: e.target.value})}/>
-                        </div>
-                        <div>
-                        <input type='phone' placeholder='enter your contact' value={registerInformation.Phone} onChange={(e) =>setRegisterInformation({...registerInformation,phone: e.target.value})}/>
-                        </div>
-                        <div>
+                        </div> */}
+                         <div>
                         <input type="password" placeholder="Password" value={registerInformation.password} onChange={(e) =>setRegisterInformation({...registerInformation,password: e.target.value})}/>
+                        </div>
+                        <div>
+                        <input type='password' placeholder='confirm password' value={registerInformation.confirmPassword} onChange={(e) =>setRegisterInformation({...registerInformation,confirmPassword: e.target.value})}/>
                         </div>
                         <div className='buttons-login-register'>
                         <button className="sign-in-register-button" onClick={handleRegister}>Register</button>
