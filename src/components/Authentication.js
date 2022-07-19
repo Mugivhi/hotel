@@ -4,17 +4,32 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword
 } from "firebase/auth";
-import { auth } from "../firebase.js";
+import { uid } from "uid";
+import { auth,db } from "../firebase.js";
+import {set,ref,onValue,remove,} from "firebase/database"
 import { useNavigate } from "react-router-dom";
 import './authentication.css'
 // import "./welcome.css";
 // import TodoSVG from '../assets/todo-svg.svg'
 
 export default function Authentication(props) {
+  var letters=/^[A-Za-z]+$/;
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var pwd = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+  const [name,setName]=useState("");
+  const [surname,setSurname]=useState("");
+  const [identity,setId]=useState("");
+  const [image,setImg]=useState("");
+  const [contact,setContact]=useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [registerInformation, setRegisterInformation] = useState({
+    name:"",
+    surname:"",
+    identity:"",
+    image:"",
+    contact:"",
     email: "",
     confirmEmail: "",
     password: "",
@@ -24,6 +39,10 @@ export default function Authentication(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
+    onValue(ref(db,`/${auth.currentUser.uid}`),(snapshot)=>{
+      setRegisterInformation([]);
+    }
+      )
     auth.onAuthStateChanged((user) => {
       if (user) {
         navigate("/Payment");
@@ -48,17 +67,52 @@ export default function Authentication(props) {
   };
 
   const handleRegister = () => {
-    if (registerInformation.email !== registerInformation.confirmEmail) {
-      alert("Please confirm that email are the same");
+   if(registerInformation.name===""){
+    alert("name field is empty")
+   }
+   else if(!letters.test(name)){
+    alert('name field requires only alphabets')
+   }
+   else if(registerInformation.surname===""){
+    alert("surname field can't be empty")
+   }
+   else if(!letters.test(surname)){
+    alert("surname field requires only alphabets")
+   }
+   else if(registerInformation.identity===""){
+    alert("identity field can't be empty")
+   }
+   else if(registerInformation.contact===""){
+    alert("contact field cant't be empty")
+   }
+   else if(registerInformation.contact.length<10||registerInformation.contact.length>10){
+    alert('contact must be 10 in length')
+   }
+   else if(registerInformation.image===""){
+    alert('image is requred')
+   }
+   else if(!filter.test(email)){
+    alert("incorrect email format")
+   }
+   else if(!pwd.test(password)){
+    alert("Upper case, Lower case, Special character and Numeric letter are required in Password filed")
+   }
+    else if (registerInformation.email !== registerInformation.confirmEmail) {
+      alert("different emails");
       return;
     } else if (
       registerInformation.password !== registerInformation.confirmPassword
     ) {
-      alert("Please confirm that password are the same");
+      alert("different passwords");
       return;
     }
     createUserWithEmailAndPassword(
       auth,
+      registerInformation.name,
+      registerInformation.surname,
+      registerInformation.identity,
+      registerInformation.image,
+      registerInformation.contact,
       registerInformation.email,
       registerInformation.password
     )
@@ -66,6 +120,15 @@ export default function Authentication(props) {
         navigate("/Payment");
       })
       .catch((err) => alert(err.message));
+      const uidd=uid();
+      set(ref(db,`/${auth.currentUser.uid}/${uidd}`),{
+        name:name,
+        identity:identity,
+        contact:contact,
+        image:image,
+        email:email,
+        password:password
+      })
   };
 
   return(props.trigger) ?  (
@@ -73,7 +136,62 @@ export default function Authentication(props) {
       <div className="login-register-container">
         {isRegistering ? (
           <>
-            <input
+            <input className="email"
+            type="text"
+            placeholder="name"
+            value={registerInformation.name}
+            onChange={(e)=>
+            setName({
+              ...registerInformation,
+              name: e.target.value
+            })
+          }
+            />
+             <input className="email"
+            type="text"
+            placeholder="surname"
+            value={registerInformation.surname}
+            onChange={(e)=>
+            setSurname({
+              ...registerInformation,
+              surname: e.target.value
+            })
+          }
+            />
+              <input className="email"
+            type="text"
+            placeholder="id no"
+            value={registerInformation.identity}
+            onChange={(e)=>
+            setId({
+              ...registerInformation,
+              identity: e.target.value
+            })
+          }
+            />
+             <input className="email"
+            type="file"
+            placeholder="image"
+            value={registerInformation.image}
+            onChange={(e)=>
+            setImg({
+              ...registerInformation,
+              image: e.target.value
+            })
+          }
+            />
+            <input className="email"
+            type="text"
+            placeholder="phone number"
+            value={registerInformation.contact}
+            onChange={(e)=>
+            setContact({
+              ...registerInformation,
+              contact: e.target.value
+            })
+          }
+            />
+            <input className="email"
               type="email"
               placeholder="Email"
               value={registerInformation.email}
@@ -84,7 +202,7 @@ export default function Authentication(props) {
                 })
               }
             />
-            <input
+            <input className="email"
               type="email"
               placeholder="Confirm Email"
               value={registerInformation.confirmEmail}
@@ -95,7 +213,7 @@ export default function Authentication(props) {
                 })
               }
             />
-            <input
+            <input className="password"
               type="password"
               placeholder="Password"
               value={registerInformation.password}
@@ -106,7 +224,7 @@ export default function Authentication(props) {
                 })
               }
             />
-            <input
+            <input className="password"
               type="password"
               placeholder="Confirm Password"
               value={registerInformation.confirmPassword}
@@ -122,8 +240,12 @@ export default function Authentication(props) {
           </>
         ) : (
           <>
-            <input type="email" placeholder="Email" onChange={handleEmailChange} value={email} />
-            <input
+            <input className="email"
+             type="email" 
+             placeholder="Email" 
+             onChange={handleEmailChange} 
+             value={email} />
+            <input className="password"
               type="password"
               onChange={handlePasswordChange}
               value={password}
@@ -136,7 +258,7 @@ export default function Authentication(props) {
               className="create-account-button"
               onClick={() => setIsRegistering(true)}
             >
-              Create an account
+              Register
             </button>
           </>
         )}

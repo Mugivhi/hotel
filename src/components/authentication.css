@@ -19,29 +19,40 @@
     background: url(../assets/front2.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    margin-left: 20%;
     display: grid;
     align-items: center;
     justify-content: center;
     height: 60%;
-    width: 50%;
+    width: 30%;
 }
-.login-register-container input{
-    width: 70%;
-    margin-bottom: 2%;
-    margin-left: -2%;
-    height: 50px;
-    width: 80%;
-    margin-top: 10px;
-    margin-left: 80px;
-    background-color:white;
+.email{
+    width: 400px;
+    height: 60px;
     border: none;
     border-radius: 10px;
+    font-size: 30px;
+}
+.password{
+    width: 400px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
 }
 .form-input ::placeholder{
     font-size: 30px;
 }
-.buttons-login-register button{
+.sign-in-register-button{
+    display: grid;
+    padding-top: 1%;
+    font-weight: 900;
+    margin-top: 5%;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    background-color: blue;
+    border-radius: 10px;
+}
+.create-account-button{
     display: grid;
     padding-top: 1%;
     font-weight: 900;
