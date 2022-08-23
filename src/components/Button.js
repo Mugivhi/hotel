@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import Authentication from './Authentication';
 // import styled from 'styled-components';
 
-export function Button(props) {
+export function Button() {
   const [buttonlogPopup, setButtonlog]=useState(false);
-  return (props.trigger) ?  (
+  return  (
    <>
       <button className='btn' onClick={()=>setButtonlog(true)} >Login</button>
     <Authentication trigger={buttonlogPopup}>
     </Authentication>
     </>
-  ):'';
+  )
 }
