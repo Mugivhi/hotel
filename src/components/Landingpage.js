@@ -25,8 +25,7 @@ function Landingpage(){
             <div className='logo'>
             </div>
             <div className='scroll'>
-                <>
-            <Swiper
+<Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -38,16 +37,14 @@ function Landingpage(){
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
+        className="mySwiper">
         <SwiperSlide><img src={pic1} height={800} width={2000}/></SwiperSlide>
         <SwiperSlide><img src={pic2} height={800} width={2000}/></SwiperSlide>
         <SwiperSlide><img src={pic3} height={800} width={2000}/></SwiperSlide>
         <SwiperSlide><img src={pic4} height={800} width={2000}/></SwiperSlide>
         <SwiperSlide><img src={pic5} height={800} width={2000}/></SwiperSlide>
         <SwiperSlide><img src={pic6} height={800} width={2000}/></SwiperSlide>
-      </Swiper>
-      </>
+</Swiper>
             </div>
             <div className='rooms'>
             <div className='luxury'>
@@ -65,6 +62,7 @@ function Landingpage(){
                         <button onClick={()=>setButtonPopup(true)}>
                             explore
                         </button>
+                       
                         <Review trigger={buttonPopup} setTrigger={setButtonPopup}>
                         </Review>
                     </div>
@@ -80,6 +78,7 @@ function Landingpage(){
                         <button onClick={()=>setButtonPopup(true)}>
                             explore
                         </button>
+                       
                         <Review trigger={buttonPopup}>
                         </Review>
                     </div>
@@ -158,7 +157,7 @@ function Landingpage(){
                         <div className="gmap_canvas">
                           <iframe width="200" height="200" id="gmap_canvas"
                                src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                               frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                               frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0">
                           </iframe>
                         <a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a>
                     </div>

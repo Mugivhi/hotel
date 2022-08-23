@@ -13,9 +13,13 @@ import Admusers from './components/Admusers';
 
 function App() {
   return (
-    
+   
     <BrowserRouter>
-         <Navbar/>
+     {/* <Landingpage/> */}
+     {/* <Aboutus/> */}
+     {/* <Contactus/> */}
+     {/* <Profilepage/> */}
+        <Navbar/>
         <Routes>
         <Route path="/" exact element={<Landingpage/>}/></Routes>
         <Routes>
