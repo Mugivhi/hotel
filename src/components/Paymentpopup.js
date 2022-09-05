@@ -14,4 +14,4 @@ function Paymentpopup(props){
   ):"";
 }
 
-export default Paymentpopup
+export default Paymentpopup;

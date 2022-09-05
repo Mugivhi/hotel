@@ -15,10 +15,10 @@ function App() {
   return (
    
     <BrowserRouter>
-     {/* <Landingpage/> */}
-     {/* <Aboutus/> */}
-     {/* <Contactus/> */}
-     {/* <Profilepage/> */}
+     {/* <Landingpage/> 
+     <Aboutus/> 
+     <Contactus/>
+     <Profilepage/> */}
         <Navbar/>
         <Routes>
         <Route path="/" exact element={<Landingpage/>}/></Routes>

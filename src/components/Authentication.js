@@ -9,11 +9,18 @@ import { useNavigate } from "react-router-dom";
 import "./authentication.css";
 // import TodoSVG from '../assets/todo-svg.svg'
 
-export default function Welcome() {
+export default function Authentication() {
   const [email, setEmail] = useState("");
+  const[image,setImg]=useState('');
+  const[phone, setPhone]=useState('');
+  const[name, setName]=useState('');
+  const[surname, setSurname]=useState('');
   const [password, setPassword] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [registerInformation, setRegisterInformation] = useState({
+    name:'',
+    surname:'',
+    image:image,
     email: "",
     confirmEmail: "",
     password: "",
@@ -41,7 +48,7 @@ export default function Welcome() {
   const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("/");
+        navigate("Payment");
       })
       .catch((err) => alert(err.message));
   };
@@ -50,7 +57,17 @@ export default function Welcome() {
     if (registerInformation.email !== registerInformation.confirmEmail) {
       alert("Please confirm that email are the same");
       return;
-    } else if (
+    }
+    else if(registerInformation.name==''){
+      alert("name field can't be empty" )
+    }
+    else if (registerInformation.surname==''){
+      alert("surname can't be empty")
+    }
+    else if (registerInformation.image==''){
+      alert('please add your image')
+    }
+     else if (
       registerInformation.password !== registerInformation.confirmPassword
     ) {
       alert("Please confirm that password are the same");
@@ -59,19 +76,66 @@ export default function Welcome() {
     createUserWithEmailAndPassword(
       auth,
       registerInformation.email,
-      registerInformation.password
+      registerInformation.name,
+      registerInformation.surname,
+      registerInformation.password,
+      registerInformation.image
     )
       .then(() => {
-        navigate("/");
+        navigate("Payment");
       })
       .catch((err) => alert(err.message));
   };
-
+  
   return  (
     <div className="welcome">
       <div className="login-register-container">
         {isRegistering ? (
           <>
+          <input
+              type="text"
+              placeholder="Name"
+              value={registerInformation.name}
+              onChange={(e) =>
+                setRegisterInformation({
+                  ...registerInformation,
+                  name: e.target.value
+                })
+              }
+            />
+            <input
+              type="text"
+              placeholder="surname"
+              value={registerInformation.surname}
+              onChange={(e) =>
+                setRegisterInformation({
+                  ...registerInformation,
+                  surname: e.target.value
+                })
+              }
+            />
+            <input
+              type="number"
+              placeholder="phone number"
+              value={registerInformation.contact}
+              onChange={(e) =>
+                setRegisterInformation({
+                  ...registerInformation,
+                  contact: e.target.value
+                })
+              }
+            />
+            <input
+              type="file"
+              placeholder="upload picture"
+              value={registerInformation.image}
+              onChange={(e) =>
+                setRegisterInformation({
+                  ...registerInformation,
+                  image: e.target.value
+                })
+              }
+            />
             <input
               type="email"
               placeholder="Email"

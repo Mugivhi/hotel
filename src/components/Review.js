@@ -3,6 +3,8 @@ import './landingpage.css';
 import './review.css';
 import pic7 from '../assets/room1.jpg';
 import Payment from './Payment';
+import Authentication from './Authentication';
+
 
 function Review(props){
     const [buttonPopup, setButtonPopup]=useState(false);
@@ -30,10 +32,10 @@ function Review(props){
             </div>
             <div>
             <button onClick={()=>setButtonPopup(true)}>
-                explore
+                book
             </button>
-            <Payment trigger={buttonPopup}>
-            </Payment>
+            <Authentication trigger={buttonPopup}>
+            </Authentication>
             </div>
             </div>
         </div>
