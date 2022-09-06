@@ -9,8 +9,8 @@ export function Button() {
   return  (
    <>
       <button className='btn' onClick={()=>setButtonlog(true)} >Login</button>
-    <Authentication trigger={buttonlogPopup}>
-    </Authentication>
+    {/* <Authentication trigger={buttonlogPopup}>
+    </Authentication> */}
     </>
   )
 }

@@ -10,12 +10,15 @@ import Payment from './components/Payment';
 import Userbooking from './components/Userbooking';
 import Adminadd from './components/Adminadd';
 import Admusers from './components/Admusers';
+import Authentication from './components/Authentication';
 
 function App() {
   return (
    
     <BrowserRouter>
-     {/* <Landingpage/> 
+     {/* <Landingpage/>
+     <Adminadd/>
+     <Admusers/>
      <Aboutus/> 
      <Contactus/>
      <Profilepage/> */}
@@ -32,6 +35,15 @@ function App() {
           <Route path='Payment' element={<Payment/>}/></Routes>
           <Routes>
             <Route path='Userbooking' element={<Userbooking/>}/>
+          </Routes>
+          <Routes>
+            <Route path='Authentication' element={<Authentication/>}/>
+          </Routes>
+          <Routes>
+            <Route path='Adminadd' element={<Adminadd/>}/>
+          </Routes>
+          <Routes>
+            <Route path='Admusers' element={<Admusers/>}/>
           </Routes>
     </BrowserRouter>
   );
