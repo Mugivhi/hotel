@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import "./authentication.css";
 // import TodoSVG from '../assets/todo-svg.svg'
 
-export default function Authentication() {
+export default function Authentication(props) {
   const [email, setEmail] = useState("");
   const[image,setImg]=useState('');
   const[phone, setPhone]=useState('');
@@ -87,7 +87,7 @@ export default function Authentication() {
       .catch((err) => alert(err.message));
   };
   
-  return  (
+  return  (props.trigger) ? (
     <div className="welcome">
       <div className="login-register-container">
         {isRegistering ? (
@@ -205,7 +205,7 @@ export default function Authentication() {
         )}
       </div>
     </div>
-  )
+  ):'';
 }
 
 
@@ -218,8 +218,7 @@ export default function Authentication() {
 // } from "firebase/auth";
 // import {auth} from '../firebase';
 // import { useNavigate } from "react-router-dom";
-// import './login.css';
-// import './register.css'
+// import '../components/authentication.css';
 // // import TodoSVG from '../assets/todo-svg.svg'
 
 // export default function Authentication(props) {

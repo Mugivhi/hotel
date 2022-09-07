@@ -17,7 +17,11 @@ import pic3 from '../assets/grden2.jfif';
 import pic4 from '../assets/grden3.jfif';
 import pic5 from '../assets/grden4.jfif';
 import pic6 from '../assets/grden5.jpg';
-import pic7 from '../assets/room1.jpg'
+import pic7 from '../assets/room1.jpg';
+import pic8 from '../assets/rom2.jpg';
+import pic9 from '../assets/room3.jpg';
+import pic10 from '../assets/room4.jpg';
+import pic11 from '../assets/room5.jpg';
 function Landingpage(){
     const [buttonPopup, setButtonPopup]=useState(false);
     return(
@@ -68,7 +72,7 @@ function Landingpage(){
                     </div>
                 </div>
                 <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
+                    <img src={pic8} width={400} height={500}/>
                     <div className='text'>
                         <h4>
                             The Luxury rooms at The<br></br> Cullinan on Kalahari
@@ -84,7 +88,7 @@ function Landingpage(){
                     </div>
                 </div>
                 <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
+                    <img src={pic9} width={400} height={500}/>
                     <div className='text'>
                         <h4>
                             The Luxury rooms at The<br></br> Cullinan on Kalahari
@@ -99,7 +103,7 @@ function Landingpage(){
                     </div>
                 </div>
                 <div className='roominfo'>
-                    <img src={pic7} width={400} height={500}/>
+                    <img src={pic10} width={400} height={500}/>
                     <div className='text'>
                         <h4>
                             The Luxury rooms at The<br></br> Cullinan on Kalahari
