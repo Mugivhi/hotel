@@ -32,18 +32,18 @@ function App() {
         <Routes>
         <Route path="/profilepage"  element={<Profilepage/>}/></Routes>
         <Routes>
-          <Route path='Payment' element={<Payment/>}/></Routes>
+          <Route path='/Payment' element={<Payment/>}/></Routes>
           <Routes>
-            <Route path='Userbooking' element={<Userbooking/>}/>
+            <Route path='/Userbooking' element={<Userbooking/>}/>
           </Routes>
           <Routes>
-            <Route path='Authentication' element={<Authentication/>}/>
+            <Route path='/Authentication' element={<Authentication/>}/>
           </Routes>
           <Routes>
-            <Route path='Adminadd' element={<Adminadd/>}/>
+            <Route path='/Adminadd' element={<Adminadd/>}/>
           </Routes>
           <Routes>
-            <Route path='Admusers' element={<Admusers/>}/>
+            <Route path='/Admusers' element={<Admusers/>}/>
           </Routes>
     </BrowserRouter>
   );

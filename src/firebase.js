@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "hotel-auth-eeca7",
   storageBucket: "hotel-auth-eeca7.appspot.com",
   messagingSenderId: "879831074737",
-  appId: "1:879831074737:web:095334e5adf2be4f04df90"
+  appId: "1:879831074737:web:095334e5adf2be4f04df90",
 };
 const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);

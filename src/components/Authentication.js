@@ -32,7 +32,7 @@ export default function Authentication(props) {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        navigate("/");
+        // navigate("/Landingpage");
       }
     });
   }, []);
@@ -48,7 +48,7 @@ export default function Authentication(props) {
   const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("Payment");
+        // navigate("/Payment");
       })
       .catch((err) => alert(err.message));
   };
@@ -82,7 +82,7 @@ export default function Authentication(props) {
       registerInformation.image
     )
       .then(() => {
-        navigate("Payment");
+        // navigate("/Payment");
       })
       .catch((err) => alert(err.message));
   };
