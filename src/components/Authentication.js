@@ -4,7 +4,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword
 } from "firebase/auth";
-import { auth } from "../firebase.js";
+import { auth,createUserDocument } from "../firebase.js";
 import { useNavigate } from "react-router-dom";
 import "./authentication.css";
 // import TodoSVG from '../assets/todo-svg.svg'
@@ -48,7 +48,7 @@ export default function Authentication(props) {
   const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        // navigate("/Payment");
+        navigate("/Payment");
       })
       .catch((err) => alert(err.message));
   };
@@ -73,7 +73,7 @@ export default function Authentication(props) {
       alert("Please confirm that password are the same");
       return;
     }
-    createUserWithEmailAndPassword(
+      createUserWithEmailAndPassword(
       auth,
       registerInformation.email,
       registerInformation.name,
@@ -82,12 +82,14 @@ export default function Authentication(props) {
       registerInformation.image
     )
       .then(() => {
-        // navigate("/Payment");
+        navigate("/Payment");
       })
       .catch((err) => alert(err.message));
   };
+
+//  createUserDocument(user,{displayName});
   
-  return  (props.trigger) ? (
+  return  (
     <div className="welcome">
       <div className="login-register-container">
         {isRegistering ? (
@@ -181,7 +183,7 @@ export default function Authentication(props) {
               }
             />
             <button className="sign-in-register-button" onClick={handleRegister}>Register</button>
-            <button className="create-account-button" onClick={() => setIsRegistering(false)}>Go back</button>
+            <button className="create-account-button" onClick={() => setIsRegistering(false)}>sign-in</button>
           </>
         ) : (
           <>
@@ -199,13 +201,13 @@ export default function Authentication(props) {
               className="create-account-button"
               onClick={() => setIsRegistering(true)}
             >
-              Create an account
+              sign-up
             </button>
           </>
         )}
       </div>
     </div>
-  ):'';
+  )
 }
 
 

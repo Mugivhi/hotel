@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Sidebar from './components/sidebar';
 import { BrowserRouter ,Routes,Route } from 'react-router-dom';
 import Landingpage from './components/Landingpage';
 import Aboutus from './components/Aboutus';
@@ -10,10 +11,19 @@ import Payment from './components/Payment';
 import Userbooking from './components/Userbooking';
 import Adminadd from './components/Adminadd';
 import Admusers from './components/Admusers';
+import Adminlogin from './components/Adminlogin';
 import Authentication from './components/Authentication';
 
 function App() {
   return (
+    // <div className="main">
+    //   <Sidebar />
+    //   <div className="container">
+    //     <h1 className="title">My React App</h1>
+    //     <p className="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    //     <button className="btn">Explore now</button>
+    //   </div>
+    // </div>
    
     <BrowserRouter>
      {/* <Landingpage/>
@@ -44,6 +54,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path='/Admusers' element={<Admusers/>}/>
+          </Routes>
+          <Routes>
+            <Route path='/Adminlogin' element={<Adminlogin/>}/>
           </Routes>
     </BrowserRouter>
   );

@@ -1,16 +1,17 @@
-import React, {useState}from 'react';
-import './button.css';
-import { Link } from 'react-router-dom';
-import Authentication from './Authentication';
-// import styled from 'styled-components';
+import React, {useState} from 'react';
+import './landingpage.css';
+import './review.css';
 
-export function Button() {
-  const [buttonlogPopup, setButtonlog]=useState(false);
-  return  (
-   <>
-      <button className='btn' onClick={()=>setButtonlog(true)} >Login</button>
-    <Authentication trigger={buttonlogPopup}>
-    </Authentication>
-    </>
-  )
+
+function Button(props){
+    
+    return(props.trigger) ? (
+        <div className=''>
+            <div className='popup-inner'>
+                <button className='close-btn' onClick={() => props.setTrigger(false)}>close</button>
+                {props.children}
+            </div>
+        </div>
+    ):"";
 }
+export default Button;

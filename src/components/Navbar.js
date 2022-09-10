@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from './Button';
+// import Button from './Button';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 // import Dropdown from './Dropdown';
@@ -26,7 +26,6 @@ function Navbar() {
       setDropdown(false);
     }
   };
-
   return (
     <>
       <nav className='navbar'>
@@ -74,8 +73,25 @@ function Navbar() {
               Contacts
             </Link>
           </li>
+          <li className='nav-item'>
+          <Link
+              to='/Authentication'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Login
+            </Link>
+          </li>
+          <li className='nav-item'>
+          <Link
+              to='/Adminlogin'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Admin
+            </Link>
+          </li>
         </ul>
-        <Button />
       </nav>
     </>
   );

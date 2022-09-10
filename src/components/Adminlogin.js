@@ -1,30 +1,26 @@
-import './login.css';
+
 import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+
+
 function Adminlogin(){
+    const [click, setClick] = useState(false);
+    const [dropdown, setDropdown] = useState(false);
+  
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
     return(
-        <div className='main-page'>
-            <div className='loginpage'>
-                <div className='header'>
-                <div className='header-login'>
-                    <h2>Login</h2>
-                </div>
-                <div className='header-admin'>
-                    <h2>Login as Admin</h2>
-                </div>
-                </div>
-                <div className='form-login'>
-                <form>
-                    <div>
-                        <input placeholder='entert your username or email'></input>
-                    </div>
-                    <div>
-                        <input placeholder='password'></input>
-                    </div>
-                    <div className='buttons-login'>
-                        <button>Login</button>
-                       <button>Sign-up</button>
-                    </div>
-                </form>
+        <div className='welcome'>
+            <div className="login-register-container">
+                <input placeholder='adim specific code'></input>
+                <div className='buttons-login'>
+            <Link
+                  to='/Admusers'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Login
+            </Link>
                 </div>
             </div>
         </div>
