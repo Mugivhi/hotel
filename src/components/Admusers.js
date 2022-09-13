@@ -14,13 +14,13 @@ function Admusers(){
                 <div className='main-admin'>
                     <div className='side-menu'>
                         <div className='users'>
-                            <h3>Users</h3>
+                            <button className='users-btn'>users</button>
                         </div>
                         <div className='rooms'>
-                            <h3>Rooms</h3>
+                        <button className='users-btn'>rooms</button>
                         </div>
                         <div className='bookings'>
-                            <h3>Bookings</h3>
+                        <button className='users-btn'>bookings</button>
                         </div>
                     </div>
                     <div className='data'>

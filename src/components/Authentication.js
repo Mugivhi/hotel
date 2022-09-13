@@ -10,6 +10,9 @@ import "./authentication.css";
 // import TodoSVG from '../assets/todo-svg.svg'
 
 export default function Authentication(props) {
+  var letters=/^[A-Za-z]+$/;
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var pwd = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
   const [email, setEmail] = useState("");
   const[image,setImg]=useState('');
   const[phone, setPhone]=useState('');
@@ -18,11 +21,13 @@ export default function Authentication(props) {
   const [password, setPassword] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [registerInformation, setRegisterInformation] = useState({
-    name:'',
-    surname:'',
+
+    name:name,
+    surname:surname,
     image:image,
-    email: "",
-    confirmEmail: "",
+    phone:phone,
+    email: email,
+    confirmEmail: email,
     password: "",
     confirmPassword: ""
   });
@@ -32,7 +37,7 @@ export default function Authentication(props) {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        // navigate("/Landingpage");
+        navigate("/Authentication");
       }
     });
   }, []);
@@ -48,7 +53,7 @@ export default function Authentication(props) {
   const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate("/Payment");
+        navigate("/");
       })
       .catch((err) => alert(err.message));
   };
@@ -82,14 +87,13 @@ export default function Authentication(props) {
       registerInformation.image
     )
       .then(() => {
-        navigate("/Payment");
+        navigate("/");
       })
       .catch((err) => alert(err.message));
   };
-
 //  createUserDocument(user,{displayName});
   
-  return  (
+  return(
     <div className="welcome">
       <div className="login-register-container">
         {isRegistering ? (
@@ -98,8 +102,7 @@ export default function Authentication(props) {
               type="text"
               placeholder="Name"
               value={registerInformation.name}
-              onChange={(e) =>
-                setRegisterInformation({
+              onChange={(e) =>setRegisterInformation({
                   ...registerInformation,
                   name: e.target.value
                 })

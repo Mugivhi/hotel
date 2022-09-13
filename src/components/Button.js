@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import './landingpage.css';
-import './review.css';
+// import React, {useState} from 'react';
+// import './landingpage.css';
+// import './review.css';
+// import Authentication from './Authentication';
 
 
-function Button(props){
+// function Button(props){
+//     const [buttonPopup, setButtonPopup]=useState(false);
     
-    return(props.trigger) ? (
-        <div className=''>
-            <div className='popup-inner'>
-                <button className='close-btn' onClick={() => props.setTrigger(false)}>close</button>
-                {props.children}
-            </div>
-        </div>
-    ):"";
-}
-export default Button;
+//     return(props.trigger) ? (
+//         <div className=''>
+//           <Authentication trigger={buttonPopup}>
+//     </Authentication>
+//         </div>
+//     ):"";
+// }
+// export default Button;

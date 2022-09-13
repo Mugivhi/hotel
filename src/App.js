@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Sidebar from './components/sidebar';
 import { BrowserRouter ,Routes,Route } from 'react-router-dom';
 import Landingpage from './components/Landingpage';
 import Aboutus from './components/Aboutus';

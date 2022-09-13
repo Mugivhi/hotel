@@ -214,8 +214,8 @@ function Landingpage(){
             <button onClick={()=>setButtonPopup3(true)}>
                 book
             </button>
-            <Authentication trigger={buttonPopup3}  setTrigger={setButtonPopup3}>
-            </Authentication>
+            {/* <Authentication trigger={buttonPopup3}  setTrigger={setButtonPopup3}>
+            </Authentication> */}
             </div>
         </Review>
                     </div>
