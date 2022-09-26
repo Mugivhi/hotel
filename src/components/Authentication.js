@@ -5,8 +5,10 @@ import {
   createUserWithEmailAndPassword
 } from "firebase/auth";
 import { auth,createUserDocument } from "../firebase.js";
+import { doc, setDoc, Timestamp } from "firebase/firestore"; 
 import { useNavigate } from "react-router-dom";
 import "./authentication.css";
+import { db } from "../firebase.js";
 // import TodoSVG from '../assets/todo-svg.svg'
 
 export default function Authentication(props) {
@@ -59,6 +61,23 @@ export default function Authentication(props) {
   };
 
   const handleRegister = () => {
+   
+
+   const docData = {
+    stringExample: "Hello world!",
+    booleanExample: true,
+    numberExample: 3.14159265,
+    dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
+    arrayExample: [5, true, "hello"],
+    nullExample: null,
+    objectExample: {
+        a: 5,
+        b: {
+            nested: "foo"
+        }
+    }
+};
+ setDoc(doc(db, "data", "one"),this.docData);
     if (registerInformation.email !== registerInformation.confirmEmail) {
       alert("Please confirm that email are the same");
       return;
@@ -211,7 +230,7 @@ export default function Authentication(props) {
       </div>
     </div>
   )
-}
+};
 
 
 

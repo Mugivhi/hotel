@@ -12,6 +12,7 @@ import Adminadd from './components/Adminadd';
 import Admusers from './components/Admusers';
 import Adminlogin from './components/Adminlogin';
 import Authentication from './components/Authentication';
+import Paymentpopup from './components/Paymentpopup';
 
 function App() {
   return (
@@ -56,6 +57,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path='/Adminlogin' element={<Adminlogin/>}/>
+          </Routes>
+          <Routes>
+            <Route path='/Paymentpopup' element={<Paymentpopup/>}/>
           </Routes>
     </BrowserRouter>
   );

@@ -1,9 +1,13 @@
 import React,{useState} from 'react';
 import './payment.css';
-import Paymentpopup from './Paymentpopup';
-function Payment(props){
-    const [buttonPopup, setButtonPopup]=useState(false);
-    return(props.trigger) ? (
+import {useNavigate} from 'react-router-dom'
+function Payment(){
+    const navigate=useNavigate()
+    // const [buttonPopup, setButtonPopup]=useState(false);
+    const Paymentpopup=()=>{
+        navigate('/Paymentpopup')
+    }
+    return(
         <div className='main-payment'>
             <div className='form-payment'>
                 <form>
@@ -25,14 +29,12 @@ function Payment(props){
                         <input placeholder='country or region'/>
                     </div>
                     <div className='pay-button'>
-                        <button  onClick={()=>setButtonPopup(true)}>pay</button>
-                        <Paymentpopup trigger={buttonPopup} setTrigger={setButtonPopup}>
-                        </Paymentpopup>
+                        <button onClick={Paymentpopup} >pay</button>
                     </div>
                     </div>
                 </form>
             </div>
         </div>
-    ):"";
+    )
 }
 export default Payment;

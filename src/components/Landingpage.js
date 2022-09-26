@@ -1,12 +1,14 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './landingpage.css';
 import "swiper/css";
 import './review.css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+// import { Navigate,navigation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { useNavigate } from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -15,6 +17,7 @@ import Authentication from './Authentication';
 import Review from './Review';
 import pic1 from '../assets/front.jpg';
 import pic2 from '../assets/grden1.jpg';
+import axios from 'axios'
 import pic3 from '../assets/grden2.jfif';
 import pic4 from '../assets/grden3.jfif';
 import pic5 from '../assets/grden4.jfif';
@@ -24,11 +27,57 @@ import pic8 from '../assets/rom2.jpg';
 import pic9 from '../assets/room3.jpg';
 import pic10 from '../assets/room4.jpg';
 import pic11 from '../assets/room5.jpg';
-function Landingpage(){
+import {firebase} from '../firebase'
+import Userbooking from './Userbooking';
+function Landingpage({navigation}){
     const [buttonPopup, setButtonPopup]=useState(false);
     const [buttonPopup1, setButtonPopup1]=useState(false);
     const [buttonPopup2, setButtonPopup2]=useState(false);
     const [buttonPopup3, setButtonPopup3]=useState(false);
+    const[allDocs, setAllDocs]=useState([]);
+    const navigate = useNavigate();
+//     const [users , setUsers]= useState([]);
+//     const  roomsRef = firebase.firestore().collection('rooms');
+//    async function getData(){
+//         roomsRef
+//         .onSnapshot(
+//             querySnapshot=>{
+//                 const users = []
+//                 querySnapshot.forEach((doc)=>{
+//                     const{ name,place, website,image} = doc.data()
+//                     users.push({
+//                         id:doc.id,
+//                         name,
+//                         place,
+//                         website,
+//                         image,
+//                     })
+//                 })
+//                 setUsers(users)
+//             }
+//         )
+//     }
+//     useEffect(()=>{
+//         getData();
+//     },[])
+
+const navigateTouserbooking=()=>{
+    navigate('/Userbooking');
+}
+function fetchAll(e){
+    e.preventDefault('')
+    .get()
+    .then((snapshot)=>{
+        if(snapshot.docs.length>0){
+            snapshot.docs.forEach((rooms)=>{
+                setAllDocs((prev)=>{
+                    return[...prev.rooms.data()];
+                })
+            })
+        }
+    })
+    console.log(allDocs)
+}
     return(
         <div className='main'>
             <div className='logo'>
@@ -47,20 +96,30 @@ function Landingpage(){
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper">
-        <SwiperSlide><img src={pic1} height={800} width={2000}/></SwiperSlide>
-        <SwiperSlide><img src={pic2} height={800} width={2000}/></SwiperSlide>
-        <SwiperSlide><img src={pic3} height={800} width={2000}/></SwiperSlide>
-        <SwiperSlide><img src={pic4} height={800} width={2000}/></SwiperSlide>
-        <SwiperSlide><img src={pic5} height={800} width={2000}/></SwiperSlide>
-        <SwiperSlide><img src={pic6} height={800} width={2000}/></SwiperSlide>
+        <SwiperSlide><img src='https://th.bing.com/th/id/R.da344ba8f21f9a7e3366b2a2c138163b?rik=ff8siQMqI4oOuA&pid=ImgRaw&r=0' height={800} width={2000}/></SwiperSlide>
+        <SwiperSlide><img src='https://exclusivegetaways.co.za/wp-content/uploads/2017/02/57-Waterberg-Central-Living-Area.jpg' height={800} width={2000}/></SwiperSlide>
+        <SwiperSlide><img src='https://bt-photos.global.ssl.fastly.net/bajacali/1280_boomver_1_20-871-34.jpg' height={800} width={2000}/></SwiperSlide>
+        <SwiperSlide><img src='https://cache.marriott.com/marriottassets/marriott/PRYWB/prywb-exterior-0108-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1180px:*' height={800} width={2000}/></SwiperSlide>
+        <SwiperSlide><img src='https://www.jet2holidays.com/HotelImages/Web/JSI_82526_KB_Ammos_Suites_1120_01.jpg' height={800} width={2000}/></SwiperSlide>
+        <SwiperSlide><img src='https://th.bing.com/th/id/R.9e68b2e87afcf6d314c62406d533507d?rik=ppYSoTsQLbPu2g&pid=ImgRaw&r=0' height={800} width={2000}/></SwiperSlide>
 </Swiper>
 </div>
             <div className='rooms'>
+            {/* <div data={users}
+                renderItem={({item})=>(
+                    <image src={item.image} width={400} height={500}/>
+                )}
+                /> */}
             <div className='luxury'>
                 <h3>WE REIMAGINED LUXURY</h3>
             </div>
             <div className='booking'>
                 <div className='roominfo'>
+                    {/* {allDocs.map((rooms)=>{
+                        return(
+                            <image src={rooms.image} height={300} width={600}/>
+                        )
+                    })} */}
                     <img src={pic7} width={400} height={500}/>
                     <div className='text'>
                         <h4>
@@ -91,7 +150,7 @@ function Landingpage(){
             </div>
             </div>
             <div>
-            <button onClick={()=>setButtonPopup(true)}>
+            <button onClick={navigateTouserbooking}>
                 book
             </button>
             {/* <Authentication trigger={buttonPopup}>
@@ -114,6 +173,7 @@ function Landingpage(){
                        
         <Review trigger={buttonPopup1} setTrigger={setButtonPopup1}>
             <div className='room-rev'>
+                
                 <img src={pic8} height={300} width={600}></img>
             </div>
             <div className='more-info'>
@@ -131,7 +191,7 @@ function Landingpage(){
             </div>
             </div>
             <div>
-            <button onClick={()=>setButtonPopup1(true)}>
+            <button onClick={navigateTouserbooking}>
                 book
             </button>
             {/* <Authentication trigger={buttonPopup}>
@@ -171,7 +231,7 @@ function Landingpage(){
             </div>
             </div>
             <div>
-            <button onClick={()=>setButtonPopup2(true)}>
+            <button onClick={navigateTouserbooking}>
                 book
             </button>
             {/* <Authentication trigger={buttonPopup}>
@@ -211,7 +271,7 @@ function Landingpage(){
             </div>
             </div>
             <div>
-            <button onClick={()=>setButtonPopup3(true)}>
+            <button onClick={navigateTouserbooking}>
                 book
             </button>
             {/* <Authentication trigger={buttonPopup3}  setTrigger={setButtonPopup3}>

@@ -1,10 +1,28 @@
+.userbookings{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100vh;
+    z-index: 80;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boking-user{
+    box-shadow: 10px 10px 5px #aaaaaa;
+    border: 1px solid #BFBFBF;
+    width: 30%;
+}
 .adminadd{
     text-align: center;
     justify-content: center;
     align-items: center;
 }
-.boking-user input{
-    width: 50%;
+.ubooking-inputs input{
+    width: 100%;
     height: 50px;
     background-color: #d9d9d9;
     border: none;
@@ -12,5 +30,5 @@
 }
 .proceed-btn button{
     color: white;
-    width: 10%;
+    width: 50%;
 }
