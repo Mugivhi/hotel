@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import {firebase} from '../firebase';
 import {Link} from 'react-router-dom';
 import './landingpage.css';
 import "swiper/css";
@@ -27,57 +28,39 @@ import pic8 from '../assets/rom2.jpg';
 import pic9 from '../assets/room3.jpg';
 import pic10 from '../assets/room4.jpg';
 import pic11 from '../assets/room5.jpg';
-import {firebase} from '../firebase'
 import Userbooking from './Userbooking';
+import { async } from '@firebase/util';
 function Landingpage({navigation}){
     const [buttonPopup, setButtonPopup]=useState(false);
     const [buttonPopup1, setButtonPopup1]=useState(false);
     const [buttonPopup2, setButtonPopup2]=useState(false);
     const [buttonPopup3, setButtonPopup3]=useState(false);
     const[allDocs, setAllDocs]=useState([]);
+    const roomRef = firebase.firestore().collection('rooms');
+    const [roms,setRoms]=useState([]);
+    const db = firebase.firestore();
+   async function fetchAll(){
+        db.collection('rooms')
+        .get()
+        .then((snapshot)=>{
+            if(snapshot.docs.length>0){
+                snapshot.docs.forEach((doc)=>{
+                    setAllDocs((prev)=>{
+                        return[...prev,doc.data()]
+                    });
+                });
+            }
+        });
+        
+    }
+    useEffect(()=>{
+        fetchAll();
+    },[])
     const navigate = useNavigate();
-//     const [users , setUsers]= useState([]);
-//     const  roomsRef = firebase.firestore().collection('rooms');
-//    async function getData(){
-//         roomsRef
-//         .onSnapshot(
-//             querySnapshot=>{
-//                 const users = []
-//                 querySnapshot.forEach((doc)=>{
-//                     const{ name,place, website,image} = doc.data()
-//                     users.push({
-//                         id:doc.id,
-//                         name,
-//                         place,
-//                         website,
-//                         image,
-//                     })
-//                 })
-//                 setUsers(users)
-//             }
-//         )
-//     }
-//     useEffect(()=>{
-//         getData();
-//     },[])
-
 const navigateTouserbooking=()=>{
     navigate('/Userbooking');
 }
-function fetchAll(e){
-    e.preventDefault('')
-    .get()
-    .then((snapshot)=>{
-        if(snapshot.docs.length>0){
-            snapshot.docs.forEach((rooms)=>{
-                setAllDocs((prev)=>{
-                    return[...prev.rooms.data()];
-                })
-            })
-        }
-    })
-    console.log(allDocs)
-}
+
     return(
         <div className='main'>
             <div className='logo'>
@@ -104,22 +87,25 @@ function fetchAll(e){
         <SwiperSlide><img src='https://th.bing.com/th/id/R.9e68b2e87afcf6d314c62406d533507d?rik=ppYSoTsQLbPu2g&pid=ImgRaw&r=0' height={800} width={2000}/></SwiperSlide>
 </Swiper>
 </div>
-            <div className='rooms'>
-            {/* <div data={users}
-                renderItem={({item})=>(
-                    <image src={item.image} width={400} height={500}/>
-                )}
-                /> */}
-            <div className='luxury'>
+<div className='luxury'>
                 <h3>WE REIMAGINED LUXURY</h3>
+</div>
+            <div className='rooms'>
+                {allDocs.map((doc,index)=>{
+                    return(
+                        <div key={index} className='fetchedData'>
+                            <img src={doc.rooomImg} height={300} width={300} />
+                            <p>{doc.name}</p>
+                            <p>{doc.number}</p>
+                            <p>{doc.roomType}</p>
+                            <p>{doc.space}</p>
+                            <p>{doc.special}</p>
+                            <h6>R{doc.roomPrice}</h6>
+                        </div>
+                    )
+                })}
             </div>
-            <div className='booking'>
-                <div className='roominfo'>
-                    {/* {allDocs.map((rooms)=>{
-                        return(
-                            <image src={rooms.image} height={300} width={600}/>
-                        )
-                    })} */}
+            {/* <div className='rooms'>
                     <img src={pic7} width={400} height={500}/>
                     <div className='text'>
                         <h4>
@@ -153,13 +139,11 @@ function fetchAll(e){
             <button onClick={navigateTouserbooking}>
                 book
             </button>
-            {/* <Authentication trigger={buttonPopup}>
-            </Authentication> */}
             </div>
         </Review>
                     </div>
-                </div>
-                <div className='roominfo'>
+                </div> */}
+                {/* <div className='roominfo'>
                     <img src={pic8} width={400} height={500}/>
                     <div className='text'>
                         <h4>
@@ -194,13 +178,11 @@ function fetchAll(e){
             <button onClick={navigateTouserbooking}>
                 book
             </button>
-            {/* <Authentication trigger={buttonPopup}>
-            </Authentication> */}
             </div>
         </Review>
                     </div>
-                </div>
-                <div className='roominfo'>
+                </div> */}
+                {/* <div className='roominfo'>
                     <img src={pic9} width={400} height={500}/>
                     <div className='text'>
                         <h4>
@@ -234,13 +216,11 @@ function fetchAll(e){
             <button onClick={navigateTouserbooking}>
                 book
             </button>
-            {/* <Authentication trigger={buttonPopup}>
-            </Authentication> */}
             </div>
         </Review>
                     </div>
-                </div>
-                <div className='roominfo'>
+                </div> */}
+                {/* <div className='roominfo'>
                     <img src={pic11} width={400} height={500}/>
                     <div className='text'>
                         <h4>
@@ -274,12 +254,10 @@ function fetchAll(e){
             <button onClick={navigateTouserbooking}>
                 book
             </button>
-            {/* <Authentication trigger={buttonPopup3}  setTrigger={setButtonPopup3}>
-            </Authentication> */}
             </div>
-        </Review>
-                    </div>
-                </div>
+        </Review> */}
+                    {/* </div> */}
+                {/* </div> */}
                 {/* <div className='roominfo'>
                     <img src={pic8} width={400} height={500}/>
                     <div className='text'>
@@ -326,8 +304,8 @@ function fetchAll(e){
                         </Review>
                     </div>    
                 </div> */}
-            </div>
-            </div>
+            {/* </div> */}
+            {/* </div> */}
             <div className='specials'>
                 <div className='hotel-special'>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

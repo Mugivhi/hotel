@@ -26,18 +26,20 @@ function App() {
     // </div>
    
     <BrowserRouter>
-     {/* <Landingpage/>
-     <Adminadd/>
-     <Admusers/>
-     <Aboutus/> 
-     <Contactus/>
-     <Profilepage/> */}
+    {/* <Authentication/> */}
+     {/* <Landingpage/> */}
+     {/* <Adminadd/> */}
+     {/* <Admusers/> */}
+     {/* <Aboutus/>  */}
+     {/* <Contactus/> */}
+     {/* <Profilepage/> */}
         <Navbar/>
         <Routes>
         <Route path="/" exact element={<Landingpage/>}/></Routes>
         <Routes>
         <Route path="/Aboutus"  element={<Aboutus/>}/></Routes>
         <Routes>
+
         <Route path="/contactus" element={<Contactus/>}/></Routes>
         <Routes>
         <Route path="/profilepage"  element={<Profilepage/>}/></Routes>

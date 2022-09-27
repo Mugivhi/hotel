@@ -1,15 +1,21 @@
 import './admusers.css';
 import pic1 from '../assets/usersimage.jfif';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Admusers(){
+    const navigate=useNavigate();
+    const navigateTo=()=>{
+        navigate('/')
+    }
     return(
-        <div>
+        <div className='the-admin'>
         <div className='conatainer'>
             <div className='adm-topnav'>
                 <div className='logo'>
                 </div>
                 <div className='adm-btn'>
-                    <button>Logout</button>
+                    <button onClick={navigateTo}>Logout</button>
                 </div>
                 <div className='main-admin'>
                     <div className='side-menu'>
